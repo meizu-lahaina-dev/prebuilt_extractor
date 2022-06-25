@@ -58,7 +58,10 @@ $sevenzip e "$LOCALDIR"/update.zip payload.bin
 
 # Extract payload.bin
 echo "Extracting payload.bin..."
-$payload_dumper -p vendor,vendor_boot,boot -o $outdir payload.bin
+$payload_dumper -p vendor,vendor_boot,boot,dtbo -o $outdir payload.bin
+
+# Copy dtbo.img
+cp "$outdir"/dtbo.img "$outdir"/final
 
 # Extract vendor.img for vendor modules
 echo "Extracting vendor.img..."
