@@ -58,9 +58,6 @@ $sevenzip e "$LOCALDIR"/update.zip payload.bin
 
 # Extract payload.bin
 echo "Extracting payload.bin..."
-if [ -e "$LOCALDIR/payload.bin" ]; then
-    rm "$LOCALDIR/payload.bin"
-fi
 $payload_dumper -p vendor,vendor_boot,boot -o $outdir payload.bin
 
 # Extract vendor.img for vendor modules
